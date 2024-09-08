@@ -7,7 +7,8 @@ import warnings
 
 class PermAnova:
     """
-    Class to perform [PERMANOVA](https://en.wikipedia.org/wiki/Permutational_analysis_of_variance) analysis between two samples.
+    Class to perform `PERMANOVA <https://en.wikipedia.org/wiki/Permutational_analysis_of_variance>`_
+    analysis between two samples.
     """
 
     def _pca_compress(self):

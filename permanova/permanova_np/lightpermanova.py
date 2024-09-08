@@ -7,7 +7,8 @@ import warnings
 
 class LightPermAnova:
     """
-    Class to perform [PERMANOVA](https://en.wikipedia.org/wiki/Permutational_analysis_of_variance) analysis between two samples.
+    Class to perform `PERMANOVA <https://en.wikipedia.org/wiki/Permutational_analysis_of_variance>`_
+    analysis between two samples.
     """
 
     def _pca_compress(self):
@@ -182,52 +183,3 @@ class LightPermAnova:
         self.pseudo_f_values = np.array(self.pseudo_f_values)
         self.over = np.sum(self.pseudo_f_values > self.starting_pseudo_f)
         return (self.over + 1) / (tot_permutations + 1)
-
-
-class PermAnovaSampler(LightPermAnova):
-    """
-    Draws a representative sample by comparing it with the original set using PERMANOVA.
-    """
-
-    def __init__(self, sample_1: np.ndarray, compress: bool = False) -> None:
-        super().__init__(sample_1, compress)
-
-    def _subsample(self, share: float) -> None:
-        """
-        Draws a sample from sample_1 with size share*sample_1.shape[0]
-        """
-        subsample_i = np.random.choice(
-            len(self.sample_1), round(share * len(self.sample_1))
-        )
-        self.sample_2 = self.sample_1[subsample_i, :]
-
-    def get_representative_sample(
-        self,
-        tot_permutations: int,
-        min_subsample_share: float = 0.2,
-        max_subsample_share: float = 0.8,
-        step: float = 0.2,
-        alpha: float = 0.05,
-    ) -> np.ndarray:
-        """
-        Draws a sample of size share*sample_1, for share in range(min_subsample_share, max_subsample_share, step),
-        at each step PERMANOVA test is computed, if null hypothesis is not rejected (p_value > alpha) the subsample is returned.
-        Args:
-            tot_permutations (int): total number of permutations for PERMANOVA test
-            min_subsample_share (float, optional): Defaults to 0.2.
-            max_subsample_share (float, optional): Defaults to 0.8.
-            step (float, optional): Defaults to 0.2.
-            alpha (float, optional): critical value for the test. Defaults to 0.05.
-
-        Returns:
-            np.ndarray: subsample of sample_1
-        """
-        for self.share in np.arange(min_subsample_share, max_subsample_share, step):
-            self._subsample(self.share)
-            self.p_value = self.run_simulation(self.sample_2, tot_permutations)
-            if self.p_value > alpha:
-                break
-        if self.p_value < alpha:
-            warnings.warn("The subsample is not representative of the original sample")
-
-        return self.sample_2

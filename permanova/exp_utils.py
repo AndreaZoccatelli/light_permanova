@@ -1,8 +1,5 @@
-from .permanova_np.lightpermanova import LightPermAnova, PermAnovaSampler
-from .permanova_torch.lightpermanova import (
-    LightPermAnova as LightPermAnovaTorch,
-    PermAnovaSampler as PermAnovaSamplerTorch,
-)
+from .permanova_np.lightpermanova import LightPermAnova
+from .permanova_torch.lightpermanova import LightPermAnova as LightPermAnovaTorch
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -88,16 +85,9 @@ class NumpyTest:
         if show_plots:
             NumpyTest.plot_distributions(sample_1, sample_2)
 
-        print("Finding representative subsamples...")
-        permanovasampler1 = PermAnovaSampler(sample_1)
-        permanovasampler2 = PermAnovaSampler(sample_2)
-
-        sub1 = permanovasampler1.get_representative_sample(tot_permutations=1000)
-        sub2 = permanovasampler2.get_representative_sample(tot_permutations=1000)
-
         print("Computing permutations...")
-        permanova = LightPermAnova(sub1, compress=True)
-        pvalue = permanova.run_simulation(sub2, tot_permutations=10000)
+        permanova = LightPermAnova(sample_1, compress=True)
+        pvalue = permanova.run_simulation(sample_2, tot_permutations=10000)
         print(f"p-value: {round(pvalue,5)}")
 
 
@@ -182,14 +172,7 @@ class TorchTest:
         if show_plots:
             TorchTest.plot_distributions(sample_1, sample_2)
 
-        print("Finding representative subsamples...")
-        permanovasampler1 = PermAnovaSamplerTorch(sample_1)
-        permanovasampler2 = PermAnovaSamplerTorch(sample_2)
-
-        sub1 = permanovasampler1.get_representative_sample(tot_permutations=1000)
-        sub2 = permanovasampler2.get_representative_sample(tot_permutations=1000)
-
         print("Computing permutations...")
-        permanova = LightPermAnovaTorch(sub1, compress=True)
-        pvalue = permanova.run_simulation(sub2, tot_permutations=10000)
+        permanova = LightPermAnovaTorch(sample_1, compress=True)
+        pvalue = permanova.run_simulation(sample_2, tot_permutations=10000)
         print(f"p-value: {round(pvalue.item(),5)}")
