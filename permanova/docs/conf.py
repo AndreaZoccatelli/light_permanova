@@ -23,6 +23,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.napoleon",
     "myst_parser",
+    "sphinx_markdown_builder",
 ]
 source_suffix = [".rst", ".md"]
 myst_enable_extensions = ["dollarmath"]
