@@ -39,6 +39,7 @@
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
@@ -150,14 +151,20 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Light PERMANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/introduction.html">PERMANOVA for covariate shift monitoring</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="numpy_implementation/numpy.html">NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/permanova.html">permanova module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/lightpermanova_np.html">lightpermanova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/introduction.html">Overview</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="numpy_implementation/numpy.html">permanova_np module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/permanova.html">PERMANOVA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/lightpermanova_np.html">LightPERMANOVA</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="pytorch_implementation/pytorch.html">PyTorch</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="pytorch_implementation/lightpermanova_torch.html">lightpermanova</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pytorch_implementation/pytorch.html">permanova_torch module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytorch_implementation/lightpermanova_torch.html">LightPERMANOVA</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="experiments_docs/experiments_docs.html">Experiments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="experiments_docs/exp_utils.html">exp_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experiments_docs/test_tabular_numpy.html">PERMANOVA test on tabular data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experiments_docs/fashion_mnist_test.html">PERMANOVA test on images</a></li>
 </ul>
 </details></li>
 </ul>
@@ -268,19 +275,42 @@ document.write(`
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#L"><strong>L</strong></a>
+ <a href="#G"><strong>G</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
+ | <a href="#T"><strong>T</strong></a>
  
 </div>
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.NumpyTest.generate_samples_with_mixture_covariates">generate_samples_with_mixture_covariates() (permanova.experiments.exp_utils.NumpyTest static method)</a>
+
+      <ul>
+        <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.TorchTest.generate_samples_with_mixture_covariates">(permanova.experiments.exp_utils.TorchTest static method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.NumpyTest.generate_samples_with_normal_covariates">generate_samples_with_normal_covariates() (permanova.experiments.exp_utils.NumpyTest static method)</a>
+
+      <ul>
+        <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.TorchTest.generate_samples_with_normal_covariates">(permanova.experiments.exp_utils.TorchTest static method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="numpy_implementation/lightpermanova_np.html#permanova_np.lightpermanova.LightPermAnova">LightPermAnova (class in permanova_np.lightpermanova)</a>
+      <li><a href="numpy_implementation/lightpermanova_np.html#permanova.permanova_np.lightpermanova.LightPERMANOVA">LightPERMANOVA (class in permanova.permanova_np.lightpermanova)</a>
 
       <ul>
-        <li><a href="pytorch_implementation/lightpermanova_torch.html#permanova_torch.lightpermanova.LightPermAnova">(class in permanova_torch.lightpermanova)</a>
+        <li><a href="pytorch_implementation/lightpermanova_torch.html#permanova.permanova_torch.lightpermanova.LightPERMANOVA">(class in permanova.permanova_torch.lightpermanova)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -293,42 +323,65 @@ document.write(`
     module
 
       <ul>
-        <li><a href="numpy_implementation/lightpermanova_np.html#module-permanova_np.lightpermanova">permanova_np.lightpermanova</a>
+        <li><a href="experiments_docs/exp_utils.html#module-permanova.experiments.exp_utils">permanova.experiments.exp_utils</a>
 </li>
-        <li><a href="numpy_implementation/permanova.html#module-permanova_np.permanova">permanova_np.permanova</a>
+        <li><a href="numpy_implementation/lightpermanova_np.html#module-permanova.permanova_np.lightpermanova">permanova.permanova_np.lightpermanova</a>
 </li>
-        <li><a href="pytorch_implementation/lightpermanova_torch.html#module-permanova_torch.lightpermanova">permanova_torch.lightpermanova</a>
+        <li><a href="numpy_implementation/permanova.html#module-permanova.permanova_np.permanova">permanova.permanova_np.permanova</a>
+</li>
+        <li><a href="pytorch_implementation/lightpermanova_torch.html#module-permanova.permanova_torch.lightpermanova">permanova.permanova_torch.lightpermanova</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.NumpyTest">NumpyTest (class in permanova.experiments.exp_utils)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="numpy_implementation/permanova.html#permanova_np.permanova.PermAnova">PermAnova (class in permanova_np.permanova)</a>
+      <li><a href="numpy_implementation/permanova.html#permanova.permanova_np.permanova.PERMANOVA">PERMANOVA (class in permanova.permanova_np.permanova)</a>
 </li>
       <li>
-    permanova_np.lightpermanova
+    permanova.experiments.exp_utils
 
       <ul>
-        <li><a href="numpy_implementation/lightpermanova_np.html#module-permanova_np.lightpermanova">module</a>
+        <li><a href="experiments_docs/exp_utils.html#module-permanova.experiments.exp_utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    permanova.permanova_np.lightpermanova
+
+      <ul>
+        <li><a href="numpy_implementation/lightpermanova_np.html#module-permanova.permanova_np.lightpermanova">module</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    permanova_np.permanova
+    permanova.permanova_np.permanova
 
       <ul>
-        <li><a href="numpy_implementation/permanova.html#module-permanova_np.permanova">module</a>
+        <li><a href="numpy_implementation/permanova.html#module-permanova.permanova_np.permanova">module</a>
 </li>
       </ul></li>
       <li>
-    permanova_torch.lightpermanova
+    permanova.permanova_torch.lightpermanova
 
       <ul>
-        <li><a href="pytorch_implementation/lightpermanova_torch.html#module-permanova_torch.lightpermanova">module</a>
+        <li><a href="pytorch_implementation/lightpermanova_torch.html#module-permanova.permanova_torch.lightpermanova">module</a>
+</li>
+      </ul></li>
+      <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.NumpyTest.plot_distributions">plot_distributions() (permanova.experiments.exp_utils.NumpyTest static method)</a>
+
+      <ul>
+        <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.TorchTest.plot_distributions">(permanova.experiments.exp_utils.TorchTest static method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -337,14 +390,30 @@ document.write(`
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="numpy_implementation/lightpermanova_np.html#permanova_np.lightpermanova.LightPermAnova.run_simulation">run_simulation() (permanova_np.lightpermanova.LightPermAnova method)</a>
+      <li><a href="numpy_implementation/lightpermanova_np.html#permanova.permanova_np.lightpermanova.LightPERMANOVA.run_simulation">run_simulation() (permanova.permanova_np.lightpermanova.LightPERMANOVA method)</a>
 
       <ul>
-        <li><a href="numpy_implementation/permanova.html#permanova_np.permanova.PermAnova.run_simulation">(permanova_np.permanova.PermAnova method)</a>
+        <li><a href="numpy_implementation/permanova.html#permanova.permanova_np.permanova.PERMANOVA.run_simulation">(permanova.permanova_np.permanova.PERMANOVA method)</a>
 </li>
-        <li><a href="pytorch_implementation/lightpermanova_torch.html#permanova_torch.lightpermanova.LightPermAnova.run_simulation">(permanova_torch.lightpermanova.LightPermAnova method)</a>
+        <li><a href="pytorch_implementation/lightpermanova_torch.html#permanova.permanova_torch.lightpermanova.LightPERMANOVA.run_simulation">(permanova.permanova_torch.lightpermanova.LightPERMANOVA method)</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.NumpyTest.test">test() (permanova.experiments.exp_utils.NumpyTest static method)</a>
+
+      <ul>
+        <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.TorchTest.test">(permanova.experiments.exp_utils.TorchTest static method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="experiments_docs/exp_utils.html#permanova.experiments.exp_utils.TorchTest">TorchTest (class in permanova.experiments.exp_utils)</a>
+</li>
   </ul></td>
 </tr></table>
 

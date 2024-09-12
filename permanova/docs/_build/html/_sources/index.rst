@@ -3,12 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Light Permanova documentation
+Light PERMANOVA documentation
 =============================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+A light implementation of PERMANOVA to monitor covariates distribution shift in Machine Learning Systems.
 
 
 .. toctree::

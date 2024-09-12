@@ -1,5 +1,5 @@
-NumPy
-=====
+permanova_np module
+===================
 
 .. toctree::
    :maxdepth: 2

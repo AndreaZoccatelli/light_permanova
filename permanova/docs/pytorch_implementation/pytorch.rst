@@ -1,5 +1,5 @@
-PyTorch
-=======
+permanova_torch module
+======================
 
 .. toctree::
    :maxdepth: 2

@@ -1,7 +1,7 @@
-permanova module
-================
+PERMANOVA
+=========
 
-.. automodule:: permanova_np.permanova
+.. automodule:: permanova.permanova_np.permanova
    :members:
    :undoc-members:
    :show-inheritance:

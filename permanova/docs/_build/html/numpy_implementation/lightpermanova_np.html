@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>lightpermanova &#8212; Light PERMANOVA  documentation</title>
+    <title>LightPERMANOVA &#8212; Light PERMANOVA  documentation</title>
   
   
   
@@ -40,11 +40,12 @@
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'numpy_implementation/lightpermanova_np';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyTorch" href="../pytorch_implementation/pytorch.html" />
-    <link rel="prev" title="permanova module" href="permanova.html" />
+    <link rel="next" title="permanova_torch module" href="../pytorch_implementation/pytorch.html" />
+    <link rel="prev" title="PERMANOVA" href="permanova.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,14 +152,20 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../modules.html">Light PERMANOVA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/introduction.html">PERMANOVA for covariate shift monitoring</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="numpy.html">NumPy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="permanova.html">permanova module</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">lightpermanova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/introduction.html">Overview</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="numpy.html">permanova_np module</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="permanova.html">PERMANOVA</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">LightPERMANOVA</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../pytorch_implementation/pytorch.html">PyTorch</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../pytorch_implementation/lightpermanova_torch.html">lightpermanova</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pytorch_implementation/pytorch.html">permanova_torch module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pytorch_implementation/lightpermanova_torch.html">LightPERMANOVA</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../experiments_docs/experiments_docs.html">Experiments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../experiments_docs/exp_utils.html">exp_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../experiments_docs/test_tabular_numpy.html">PERMANOVA test on tabular data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../experiments_docs/fashion_mnist_test.html">PERMANOVA test on images</a></li>
 </ul>
 </details></li>
 </ul>
@@ -301,7 +308,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>lightpermanova</h1>
+    <h1>LightPERMANOVA</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -311,8 +318,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova_np.lightpermanova.LightPermAnova"><code class="docutils literal notranslate"><span class="pre">LightPermAnova</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova_np.lightpermanova.LightPermAnova.run_simulation"><code class="docutils literal notranslate"><span class="pre">LightPermAnova.run_simulation()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova.permanova_np.lightpermanova.LightPERMANOVA"><code class="docutils literal notranslate"><span class="pre">LightPERMANOVA</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova.permanova_np.lightpermanova.LightPERMANOVA.run_simulation"><code class="docutils literal notranslate"><span class="pre">LightPERMANOVA.run_simulation()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -326,17 +333,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-permanova_np.lightpermanova">
-<span id="lightpermanova"></span><h1>lightpermanova<a class="headerlink" href="#module-permanova_np.lightpermanova" title="Link to this heading">#</a></h1>
+  <section id="module-permanova.permanova_np.lightpermanova">
+<span id="lightpermanova"></span><h1>LightPERMANOVA<a class="headerlink" href="#module-permanova.permanova_np.lightpermanova" title="Link to this heading">#</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="permanova_np.lightpermanova.LightPermAnova">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">permanova_np.lightpermanova.</span></span><span class="sig-name descname"><span class="pre">LightPermAnova</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/permanova_np/lightpermanova.html#LightPermAnova"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#permanova_np.lightpermanova.LightPermAnova" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="permanova.permanova_np.lightpermanova.LightPERMANOVA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">permanova.permanova_np.lightpermanova.</span></span><span class="sig-name descname"><span class="pre">LightPERMANOVA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/permanova/permanova_np/lightpermanova.html#LightPERMANOVA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#permanova.permanova_np.lightpermanova.LightPERMANOVA" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class to perform <a class="reference external" href="https://en.wikipedia.org/wiki/Permutational_analysis_of_variance">PERMANOVA</a>
 analysis between two samples.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="permanova_np.lightpermanova.LightPermAnova.run_simulation">
-<span class="sig-name descname"><span class="pre">run_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tot_permutations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/permanova_np/lightpermanova.html#LightPermAnova.run_simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#permanova_np.lightpermanova.LightPermAnova.run_simulation" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="permanova.permanova_np.lightpermanova.LightPERMANOVA.run_simulation">
+<span class="sig-name descname"><span class="pre">run_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tot_permutations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/permanova/permanova_np/lightpermanova.html#LightPERMANOVA.run_simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#permanova.permanova_np.lightpermanova.LightPERMANOVA.run_simulation" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -374,7 +381,7 @@ analysis between two samples.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">permanova module</p>
+        <p class="prev-next-title">PERMANOVA</p>
       </div>
     </a>
     <a class="right-next"
@@ -382,7 +389,7 @@ analysis between two samples.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PyTorch</p>
+        <p class="prev-next-title">permanova_torch module</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -402,8 +409,8 @@ analysis between two samples.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova_np.lightpermanova.LightPermAnova"><code class="docutils literal notranslate"><span class="pre">LightPermAnova</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova_np.lightpermanova.LightPermAnova.run_simulation"><code class="docutils literal notranslate"><span class="pre">LightPermAnova.run_simulation()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova.permanova_np.lightpermanova.LightPERMANOVA"><code class="docutils literal notranslate"><span class="pre">LightPERMANOVA</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova.permanova_np.lightpermanova.LightPERMANOVA.run_simulation"><code class="docutils literal notranslate"><span class="pre">LightPERMANOVA.run_simulation()</span></code></a></li>
 </ul>
 </li>
 </ul>

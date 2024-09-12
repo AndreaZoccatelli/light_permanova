@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Light Permanova documentation &#8212; Light PERMANOVA  documentation</title>
+    <title>Light PERMANOVA documentation &#8212; Light PERMANOVA  documentation</title>
   
   
   
@@ -40,7 +40,8 @@
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -154,14 +155,20 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Light PERMANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/introduction.html">PERMANOVA for covariate shift monitoring</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="numpy_implementation/numpy.html">NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/permanova.html">permanova module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/lightpermanova_np.html">lightpermanova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/introduction.html">Overview</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="numpy_implementation/numpy.html">permanova_np module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/permanova.html">PERMANOVA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy_implementation/lightpermanova_np.html">LightPERMANOVA</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="pytorch_implementation/pytorch.html">PyTorch</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="pytorch_implementation/lightpermanova_torch.html">lightpermanova</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pytorch_implementation/pytorch.html">permanova_torch module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytorch_implementation/lightpermanova_torch.html">LightPERMANOVA</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="experiments_docs/experiments_docs.html">Experiments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="experiments_docs/exp_utils.html">exp_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experiments_docs/test_tabular_numpy.html">PERMANOVA test on tabular data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experiments_docs/fashion_mnist_test.html">PERMANOVA test on images</a></li>
 </ul>
 </details></li>
 </ul>
@@ -302,7 +309,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Light Permanova documentation</h1>
+    <h1>Light PERMANOVA documentation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -317,17 +324,16 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="light-permanova-documentation">
-<h1>Light Permanova documentation<a class="headerlink" href="#light-permanova-documentation" title="Link to this heading">#</a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
+<h1>Light PERMANOVA documentation<a class="headerlink" href="#light-permanova-documentation" title="Link to this heading">#</a></h1>
+<p>A light implementation of PERMANOVA to monitor covariates distribution shift in Machine Learning Systems.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Light PERMANOVA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/introduction.html">PERMANOVA for covariate shift monitoring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy_implementation/numpy.html">NumPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pytorch_implementation/pytorch.html">PyTorch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/introduction.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy_implementation/numpy.html">permanova_np module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pytorch_implementation/pytorch.html">permanova_torch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments_docs/experiments_docs.html">Experiments</a></li>
 </ul>
 </li>
 </ul>

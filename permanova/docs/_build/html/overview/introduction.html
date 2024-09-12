@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PERMANOVA for covariate shift monitoring &#8212; Light PERMANOVA  documentation</title>
+    <title>Overview &#8212; Light PERMANOVA  documentation</title>
   
   
   
@@ -40,12 +40,13 @@
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/introduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="NumPy" href="../numpy_implementation/numpy.html" />
+    <link rel="next" title="permanova_np module" href="../numpy_implementation/numpy.html" />
     <link rel="prev" title="Light PERMANOVA" href="../modules.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -153,14 +154,20 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../modules.html">Light PERMANOVA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">PERMANOVA for covariate shift monitoring</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../numpy_implementation/numpy.html">NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../numpy_implementation/permanova.html">permanova module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../numpy_implementation/lightpermanova_np.html">lightpermanova</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../numpy_implementation/numpy.html">permanova_np module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../numpy_implementation/permanova.html">PERMANOVA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../numpy_implementation/lightpermanova_np.html">LightPERMANOVA</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../pytorch_implementation/pytorch.html">PyTorch</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../pytorch_implementation/lightpermanova_torch.html">lightpermanova</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pytorch_implementation/pytorch.html">permanova_torch module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pytorch_implementation/lightpermanova_torch.html">LightPERMANOVA</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../experiments_docs/experiments_docs.html">Experiments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../experiments_docs/exp_utils.html">exp_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../experiments_docs/test_tabular_numpy.html">PERMANOVA test on tabular data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../experiments_docs/fashion_mnist_test.html">PERMANOVA test on images</a></li>
 </ul>
 </details></li>
 </ul>
@@ -290,7 +297,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -301,11 +310,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PERMANOVA for covariate shift monitoring</h1>
+    <h1>Overview</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova-for-covariate-shift-monitoring">PERMANOVA for covariate shift monitoring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-lightweight-implementation-of-permanova">A “lightweight” implementation of PERMANOVA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -315,16 +334,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="permanova-for-covariate-shift-monitoring">
-<h1>PERMANOVA for covariate shift monitoring<a class="headerlink" href="#permanova-for-covariate-shift-monitoring" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
+<section id="permanova-for-covariate-shift-monitoring">
+<h2>PERMANOVA for covariate shift monitoring<a class="headerlink" href="#permanova-for-covariate-shift-monitoring" title="Link to this heading">#</a></h2>
 <p>One known problem of machine learning models in production which affects their predictive ability is covariate shift. It is defined as a change in the distribution of one or more independent variables used to train the model.</p>
-<p>ANOVA is often adopted to assess if two samples are from the same population by comparing the variance of their means (H0: all µ’s are equal; H1: at least one pair of µ’s are
+<p>ANOVA is often adopted to assess if two samples are from the same population by comparing the variance of their means (H0: all <span class="math notranslate nohighlight">\(\mu\)</span>’s are equal; H1: at least one pair of <span class="math notranslate nohighlight">\(\mu\)</span>’s are
 not equal). This test relies, however, on the normality assumption of the samples, which makes it a non-viable solution to effectively monitor batches of data.</p>
-<p>PERMANOVA is a multivariate version of ANOVA based on Pseudo-F statistic, which makes use of permutations, allowing for a non-parametric estimation.</p>
+<p>PERMANOVA is a multivariate version of ANOVA based on pseudo-F statistic, which makes use of permutations, allowing for a non-parametric estimation.</p>
+<p>In the case of covariates shift monitoring the test compares the oiginal sample <span class="math notranslate nohighlight">\(s_0\)</span> used at time <span class="math notranslate nohighlight">\(t_0\)</span> to train the model with a new, unseen, sample <span class="math notranslate nohighlight">\(s_1\)</span> on which the model made predictions at time <span class="math notranslate nohighlight">\(t_1\)</span>.</p>
+<p>The test starts by computing the pseudo-F statistics on the two samples as follows:</p>
 <div class="math notranslate nohighlight">
-\[F = \frac{\frac{SS_A}{p-1}}{\frac{SS_W}{N-p}}\]</div>
+\[F = \frac{\frac{SS_B}{p-1}}{\frac{SS_W}{N-p}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the number of groups (in this case <span class="math notranslate nohighlight">\(p = 2\)</span>), <span class="math notranslate nohighlight">\(n\)</span> is the number of observation in a group and <span class="math notranslate nohighlight">\(N\)</span> is the total number of observations.</p>
+<p><span class="math notranslate nohighlight">\(SS_W\)</span> is the sum of squares within the groups (where <span class="math notranslate nohighlight">\(\delta _{ij}\)</span> is 1 if the observations i and j belong to the same group, and 0 otherwise):</p>
+<div class="math notranslate nohighlight">
+\[SS_W = \frac{1}{n}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}d^2_{ij}\delta_{ij}\]</div>
+<p>and <span class="math notranslate nohighlight">\(SS_B\)</span> is the sum of squares between the groups:</p>
+<div class="math notranslate nohighlight">
+\[SS_B = SS_T - SS_W\]</div>
+<p><span class="math notranslate nohighlight">\(SS_T\)</span> is the total sum of squares:</p>
+<div class="math notranslate nohighlight">
+\[SS_T = \frac{1}{N}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}d^2_{ij}\]</div>
+<p>Then for each permutation <span class="math notranslate nohighlight">\(\pi\)</span> items are shuffled between each group and respective <span class="math notranslate nohighlight">\(F^\pi\)</span> is computed. The p-value is then computed as follows:</p>
 <div class="math notranslate nohighlight">
 \[p = \frac{\text{number of permutations with} \space F^{\pi} \geq F}{\text{total number of permutations}}\]</div>
+<p>if p-value is lower than the chosen significance level <span class="math notranslate nohighlight">\(\alpha\)</span> then the null hypothesis is rejected, so the variance of the two groups differ. This can be used as a first alert to further analyse the new sample and evaluate if a model retrain could be necessary.</p>
+</section>
+<section id="a-lightweight-implementation-of-permanova">
+<h2>A “lightweight” implementation of PERMANOVA<a class="headerlink" href="#a-lightweight-implementation-of-permanova" title="Link to this heading">#</a></h2>
+<p>The usual implementation of PERMANOVA relies on the distance matrix between every observation in the samples, this results in a computationally expensive test.</p>
+<p>However, if the observations are considered as points in the Euclidean space it is possible to revise the provious formulas leveraging distances from centroids.</p>
+<p><span class="math notranslate nohighlight">\(SS_T\)</span> = the sum of squared distances from the observations to the overall centroid</p>
+<p><span class="math notranslate nohighlight">\(SS_W\)</span> = the sum of squared distances from the observations to their own group centroid</p>
+<p>This allows to reduce the time-complexity of the algorithm from <span class="math notranslate nohighlight">\(O(N^2)\)</span> to <span class="math notranslate nohighlight">\(O(N)\)</span>, at the expense of relying on Euclidean distance. If another metric could be more suitable to the variables that describe the samples, the complete distance matrix should be adopted.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1442-9993.2001.01070.pp.x" target="_blank">Research paper</a></p>
+<p><a href="https://learninghub.primer-e.com/books/permanova-for-primer-guide-to-software-and-statistical-methods/chapter/chapter-1-permutational-anova-and-manova-permanova" target="_blank">PRIMER</a></p>
+<p><a href="https://www.jwilber.me/permutationtest/" target="_blank">Intuitive explanation of permutation tests</a></p>
+</section>
 </section>
 
 
@@ -352,7 +402,7 @@ not equal). This test relies, however, on the normality assumption of the sample
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">NumPy</p>
+        <p class="prev-next-title">permanova_np module</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -362,6 +412,23 @@ not equal). This test relies, however, on the normality assumption of the sample
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permanova-for-covariate-shift-monitoring">PERMANOVA for covariate shift monitoring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-lightweight-implementation-of-permanova">A “lightweight” implementation of PERMANOVA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 import warnings
 
 
-class LightPermAnova:
+class LightPERMANOVA:
     """
     Class to perform `PERMANOVA <https://en.wikipedia.org/wiki/Permutational_analysis_of_variance>`_
     analysis between two samples.

@@ -9,7 +9,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../.."))
 
 project = "Light PERMANOVA"
 copyright = "2024, Andrea Zoccatelli"
@@ -24,6 +24,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "myst_parser",
     "sphinx_markdown_builder",
+    "nbsphinx",
 ]
 source_suffix = [".rst", ".md"]
 myst_enable_extensions = ["dollarmath"]

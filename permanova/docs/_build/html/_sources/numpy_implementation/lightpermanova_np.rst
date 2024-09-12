@@ -1,7 +1,7 @@
-lightpermanova
+LightPERMANOVA
 ==============
 
-.. automodule:: permanova_np.lightpermanova
+.. automodule:: permanova.permanova_np.lightpermanova
    :members:
    :undoc-members:
    :show-inheritance:

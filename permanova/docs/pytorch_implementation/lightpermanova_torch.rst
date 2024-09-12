@@ -1,7 +1,7 @@
-lightpermanova
+LightPERMANOVA
 ==============
 
-.. automodule:: permanova_torch.lightpermanova
+.. automodule:: permanova.permanova_torch.lightpermanova
    :members:
    :undoc-members:
    :show-inheritance:
