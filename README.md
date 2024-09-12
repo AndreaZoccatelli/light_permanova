@@ -1,4 +1,4 @@
-# LightPermanova
+# LightPERMANOVA
 A lightweight implementation of PERMANOVA based on Euclidean distance from centroid.
 
 ## Overview
@@ -15,5 +15,5 @@ In the case of covariates shift monitoring the test compares the oiginal sample 
 ## Useful links
 Read the docs [here](https://light-permanova.readthedocs.io/en/latest/index.html).
 
-This project is part of "[Root.](https://app.gitbook.com/o/Y6GFa7e9eZJJr97DYwE9/s/rv2RagYUGenlarYKGSFe/)".
+This project is part of "[Root.](https://andrea-zoccatelli.gitbook.io/me/v/root.)".
 
