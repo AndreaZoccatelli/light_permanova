@@ -8,6 +8,10 @@ Light PERMANOVA documentation
 
 A light implementation of PERMANOVA to monitor covariates distribution shift in Machine Learning Systems.
 
+Go to the `GitHub Repository <https://github.com/AndreaZoccatelli/light_permanova>`_.
+
+This project is part of "`Root. <https://andrea-zoccatelli.gitbook.io/me/v/root.>`_".
+
 
 .. toctree::
    :maxdepth: 2
