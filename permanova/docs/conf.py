@@ -12,8 +12,9 @@ import sys
 sys.path.insert(0, os.path.abspath("../.."))
 
 project = "Light PERMANOVA"
-copyright = "2024, Andrea Zoccatelli"
-author = "Andrea Zoccatelli"
+author = """
+<a href="https://www.linkedin.com/in/andrea-zoccatelli/" target="_blank">Andrea Zoccatelli</a>
+"""
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
